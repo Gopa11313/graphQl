@@ -1,0 +1,92 @@
+# Write your query or mutation here
+#User
+mutation crreateUSer{
+ createUser(input:{name:"Gopal",username:"gopal12d",email:"gopl@gmail.com",phone:"981251"})
+    {
+    id
+    name
+    username
+    email
+    phone
+}
+}
+query retriveUser($id:ID!){
+  user(id:$id){
+    id
+  }
+}
+mutation updateUSer{
+  updateUser(id:"11",input:{name:"Gopal Thapa"}){
+    id
+    name
+  }
+}
+
+mutation deleteUser{
+  deleteUser(id:"11")
+}
+
+
+#photo
+mutation UplodPhoto{
+  createPhoto(input:{title:"Liked photo",url:"https://somthing.com",thumbnailUrl:"Wow aweasome"}){
+    id
+    title
+    url
+    thumbnailUrl
+  
+  }
+}
+query retrivePhotos($id:ID!){
+  photo(id:$id){
+    id
+  }
+}
+mutation updatePhoto{
+  updatePhoto(id:"5001",input:{url:"https://EverythingisGood.com"}){
+    id
+    url
+  }
+}
+
+mutation deletePhoto{
+  deletePhoto(id:"5001")
+}
+
+# Todo Task
+mutation insertTodoTask{
+      createTodo(input:{title:"Clean Your room",completed:false}){
+      id
+      title
+      completed
+      
+  }
+}
+mutation updateTodaTask{
+  updateTodo(id:"201",input:{completed:true}){
+    id
+    completed
+  }
+}
+mutation deleteTodoTask{
+  deleteTodo(id:"201")
+}
+query getTodoTask{
+  todos(){
+    data
+  }
+}
+
+#posts
+mutation createpost{
+  createPost(input:{title:"Dashain Offer",body:"We welcome you to ......."}){
+    id
+    title
+  	body
+    user
+    comments
+  }
+}
+
+
+    
